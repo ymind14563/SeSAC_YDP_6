@@ -26,3 +26,9 @@ input:focus {
     color: black;
     background-color: yellow;
 }
+
+/* 2, 6, 10 대신에 4n+2 로도 표현 할 수 있다.*/
+/* .stripes :nth-child(4n+2) {
+    color: black;
+    background-color: yellow;
+} */
