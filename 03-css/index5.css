@@ -1,0 +1,44 @@
+/* 웹 폰트 (web-font) */
+/* 
+    - 구글 웹 폰트, 눈누 웹 폰트
+    - 모든 브라우저에서 보는 폰트를 통일 시키는 것.
+    - 폰트를 다운로드 하는 것이 아니라 link tag 에 걸려 있는 주소에서
+      폰트를 가져오는 방식.
+    - 보통 기본 폰트는 body 태그에 작성.
+*/
+
+/* 웹 폰트 수정 방법 3가지
+    #1.은 #2와 #3과 달리 html(link)과 css(font-family) 부분 전부 수정해줘야한다.
+    #2.는 html head style 부분에 적용하면 된다.
+    #3.은 css 부분에 @font-face 부분을 복사 붙여넣기 해주고, 
+      적용할 부분 (body h1)에 font-family를 추가 해주면 적용된다.
+*/
+
+
+/* #1. google fonts  : link 로 바꾸기
+    - html link 에 복사 및 css 에 적용할 부분에 font-family 복사
+    - font-family만 있어도 작동함. (weight, style 없어도 됨)
+*/
+body div{
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: 400;
+    font-style: normal;
+
+    /* Nanum Gothic Coding 사용, 없다면 monospace 로 대체 */
+}
+
+
+/* #3. 눈누 웹폰트로 사용으로 바꾸기
+    - css에 @font-face 복사 및 적용할 곳에 font-family 추가
+*/
+body h1 {
+    font-family: 'Ownglyph_ryurue-Rg';
+}
+
+@font-face {
+    font-family: 'Ownglyph_ryurue-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryurue-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
