@@ -1,0 +1,43 @@
+h3:hover {
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+    
+}
+
+textarea:focus {
+    width: 400px;
+    height: 200px;
+    background-color: pink;
+}
+
+.red:checked + label{
+    background-color: red;
+    color: white;
+}
+.blue:checked + label{
+    background-color: blue;
+    color: black;
+}
+.yellow:checked + label{
+    background-color: yellow;
+    color: black;
+}
+
+form {
+width: 400px;
+}
+
+button {
+float: right;
+padding: 5px 15px;
+background-color: #f96666;
+color: white;
+font-size: 17px;
+border-radius: 10px;
+border: none;
+}

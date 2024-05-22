@@ -32,3 +32,26 @@ input:focus {
     color: black;
     background-color: yellow;
 } */
+
+.box::before {
+    content: "택시";
+ }
+
+ .box::after {
+    content: "빨리";
+ }
+
+
+
+
+[disabled] {
+background-color: red;
+}
+
+[placeholder="이름"] {
+background-color: orange;
+}
+
+input:not([placeholder]) {
+background-color: blue;
+}
