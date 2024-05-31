@@ -74,5 +74,61 @@ const result = loginUser();
 // -> loginUser함수의 리턴값(반환값)을 result 변수에 저장.
 console.log(result);
 
+// -----------------------------------------------
+// Switch문
+// - 하나 이상의 case 문으로 구성.
+// - default가 필수는 아니지만, 사용하길 권장. = if문의 else 같은 존재.
+//   ㄴ switch문 내의 모든 case가 매칭 되지 않을 때 실행.
+// - 여러 개의 case 문을 묶을 수도 있다.
+// - break;
+//   ㄴ 조건을 빠져나갈 때 사용하는 키워드.
+
+let a = 3;
+switch(a) {
+    case 1: 
+    case 2:
+    case 3:
+        console.log("a가 1 ~ 3 이군요!");
+        break;
+    case 4:
+        console.log("a가 4이군요!");
+        break;
+    case 5:
+        console.log("a가 5이군요!");
+        break;
+    default:
+        console.log("a가 무슨 값인지 모르겠습니다.");
+        break;
+}
+
+// 삼항 연산자
+// 조건식 ? A : B
+// 조건식 참이면 `A` 거짓이면 `B`
+// if문을 간단하게 !
+
+let num = 5;
+
+// 일반 if문
+if (num % 2 === 1) {
+    console.log("홀수");
+} else {
+    console.log("짝수");
+}
+
+// 삼항 연산자
+num % 2 === 1 ? console.log("홀수") : console.log("짝수");
+
+// 실습 - new date
+// 내장 함수 - 현재 날짜와 시간을 나타내는 JS Date 객체를 반환.
+// Q) 내장 함수 ?
+// A) JS 엔진이 기본적으로 제공하는 함수.
+// A2) 개발자가 별도로 정의하지 않아도 사용할 수 있는 함수.
+// 전역 객체에 속해 있어 어디서든 접근 가능하고 바로 사용 가능 !
+
+let now = new Date();
+let now_hour = new Date().getHours();
+
+
+
 
 
