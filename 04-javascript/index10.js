@@ -46,18 +46,18 @@ for (let alpha of alphabets) {
  // 각 요소에 대해 함수가 호출 될 떄마다, 해당 요소가 함수의 인자로 전달된다.
 
  alphabets.forEach(function (alpha) {
-    // alpha : currentValue를 의미, 박복하고 있는 현재 요소.
+    // alpha : currentValue를 의미, 반복하고 있는 현재 요소.
     console.log(alpha);
  })
 
  alphabets.forEach(function (alpha, idx) {
-    // alpha : currentValue를 의미, 박복하고 있는 현재 요소.
+    // alpha : currentValue를 의미, 반복하고 있는 현재 요소.
     // idx : currentValue의 인덱스 (위치)
     console.log(alpha, idx);
  })
 
  alphabets.forEach(function (alpha, idx, arr) {
-    // alpha : currentValue를 의미, 박복하고 있는 현재 요소.
+    // alpha : currentValue를 의미, 반복하고 있는 현재 요소.
     // idx : currentValue의 인덱스. (위치)
     // arr : forEach를 호출한 배열.
     console.log(alpha, idx, arr);
