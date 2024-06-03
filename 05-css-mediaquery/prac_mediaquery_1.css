@@ -1,0 +1,23 @@
+@media screen and (min-width: 500px) {
+    body {
+        background-color: skyblue;
+    }    
+}
+ 
+@media screen and (max-width: 300px) {
+    body {
+        background-color: orange;
+    }    
+}
+
+@media screen and (max-height: 300px) {
+    p {
+        font-weight: bold;
+    }    
+}
+
+@media screen and (min-height: 500px) {
+    p {
+        background-color: green;
+    }    
+}
