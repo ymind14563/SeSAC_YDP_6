@@ -35,7 +35,7 @@ const http = require(`http`);
 const url = require(`url`);
 const fs = require(`fs`);
 
-http.createServer(function(req, res){ // req = summer
+http.createServer(function(req, res){ // req = summer.html
     var q = url.parse(req.url, true); // req.url = /summer.html
     // true로 설정하면 쿼리 문자열이 파싱된 결과가 객체로 반환. 문자열의 각 매개변수와 그 값을 속성으로 가지게 됨.
     var filename = `.` + q.pathname; // ./summer.html = `.` + /summer.html
