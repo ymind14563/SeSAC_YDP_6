@@ -135,7 +135,7 @@ function mul(n) {
     return new Promise(function(res, rej)  {
       setTimeout(function () {
             const result = n * 2; // 14
-            // res(result); // resolve(7)
+            // res(result); // resolve(14)
             rej(new Error(`의도적으로 발생시킨 에러`));
         }, 700);
     })
