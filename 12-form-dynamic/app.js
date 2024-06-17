@@ -27,6 +27,29 @@ app.post(`/ajax`, (req, res) => {
 })
 
 
+// axios 요청 처리
+app.get(`/axios`, (req, res) => {
+    console.log(req.query);
+    res.send(req.query);
+})
+
+app.post(`/axios`, (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+})
+
+// fetch 요청 처리
+app.get(`/fetch`, (req, res) => {
+    console.log(req.query);
+    res.send(req.query);
+})
+
+app.post(`/fetch`, (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+})
+
+
 app.listen(PORT, () => {
     console.log(`${PORT} 서버로 연결 성공`);
 })
