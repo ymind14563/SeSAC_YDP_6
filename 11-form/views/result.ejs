@@ -16,6 +16,14 @@
     <div><span><%= userInfo.id %></span>님 환영합니다!</div>
     <div>비밀번호는 <span><%= userInfo.pw %></span>이군요!!</div>
 
+    <!-- email, grade 값이 있으면 출력 (필수 값 아님)-->
+    <% if (userInfo.email) { %>
+    <div>입력하신 이메일은<span><%= userInfo.email %></span>입니다.</div>
+    <% } %>
+
+    <% if (userInfo.grade) { %>
+    <div><span><%= userInfo.grade %></span>학년 이시군요!!</div>
+    <% } %>
     <a href="/">홈으로 이동하기</a>
 </body>
 </html>
