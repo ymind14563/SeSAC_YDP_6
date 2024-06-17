@@ -39,12 +39,24 @@
 
     </form>
 
+    <button onclick="getTodos();">외부 API를 이용해 TODO 불러오기</button>
+
     <div class="result"></div>
 
     <!-- frontend javascript code -->
     <script>
         const resultBox = document.querySelector(`.result`);
 
+        function getTodos() {
+            fetch('https://jsonplaceholder.typicode.com/todos/10')
+            .then(res => res.json())
+            .then(json => {
+                console.log(json)
+                resultBox.textContent = `${json.title} (${json.completed ? 'done' : 'doing'})`
+            })
+        }
+
+        
         // 1. ajax
         // 1) GET(ajax) 방식
         function ajaxGet() {
