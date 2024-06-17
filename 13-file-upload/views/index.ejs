@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <!-- index.ejs: 제목, 사진 폼 제출
+         app.js : 정보를 받을 것
+         result.ejs : index.ejs 입력한 결과 보이기 -->
+
+    <h2>Single file upload</h2>
+    <!-- multer 이용 시, enctype="multipart/form-data" 이 누락되면 동작하지 않습니다. (공식)-->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="userfile"><br>
+        <input type="text" name="title">
+        <button type="submit">업로드</button>
+    </form>
+    
+</body>
+</html>
