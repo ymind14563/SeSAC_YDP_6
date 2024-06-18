@@ -73,3 +73,8 @@ now < 12 ? console.log("오전") : console.log("오후");
 let hours = new Date().getHours();
 const amOrPm = hours < 12 ? '오전' : '오후';
 console.log(`현재 시각은 ${amOrPm} ${hours % 12 || 12}시 입니다.`);
+
+let day = new Date().getDay();
+console.log(day);
+const now2 = (0 < day < 6) ? `평일` : `주말`;
+console.log(now2);
