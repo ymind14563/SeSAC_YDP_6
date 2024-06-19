@@ -16,6 +16,7 @@ app.use(express.json());
 // 참고: multer 최신버전(1.4.5-LTS.1 버전이 한글 관련 버그가 존재하여 1.4.4로 재설치함)
 
 // multer 미들웨어 등록
+app.use(`/static`, express.static(__dirname + `/public`));
 app.use(`/uploads`, express.static(__dirname + `/uploads`));
 
 // app.use(`/images`, express.static(__dirname + `/uploads`));
@@ -83,6 +84,11 @@ app.post(`/upload/fields`, uploadDetail.fields([{name : `kiwi`}, {name : `orange
     console.log(req.files); // { kiwi: [{}, ...], orange : [{}, ...], banana [{}, ...]}
 
     res.send(`Success Upload!! (multiple2)`);
+})
+
+// 동적 폼 업로드
+app.post(`/dynamicFile`, uploadDetail.single(`thumbnail`), (req, res) => {
+    res.send(req.file);
 })
 
 app.get(`/`, (req, res) => {
