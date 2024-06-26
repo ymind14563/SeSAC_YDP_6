@@ -25,6 +25,19 @@ exports.getVisitors = (callback) => {
   })
 }
 
+
+exports.getVisitor = (targetId, callback)  => {
+  conn.query(`select * from visitor where id=${targetId}`, (err, row) => {
+    if(err) throw err;
+
+    console.log(`model/Visitor.js >>`, row);
+    // model/Visitor.js >> [ RowDataPacket { id: 3, name: '이수현', comment: '아뵤뵤뵤' } ]
+    callback(row[0]); // 배열 형태이기 때문에 [0] 사용
+  })
+
+}
+
+
 // POST 로직
 exports.postVisitor = (data, callback) => {
   console.log(data)
@@ -48,3 +61,39 @@ exports.postVisitor = (data, callback) => {
   )
 }
 
+
+// PATCH 로직
+exports.patchVisitor = (updateData, callback) => {
+  const {id, name, comment} = updateData;
+  conn.query(
+    `update visitor set name='${name}', comment='${comment}' where id=${id}`,
+    (err, rows) => {
+      if(err) throw err
+
+      console.log(`model/visitor.js >> `, rows);
+      callback(true);
+    });
+}
+
+// DELETE 로직
+exports.deleteVisitor = (targetId, callback) => {
+  // targetId: 삭제해야할 visitor id
+  conn.query(`delete from visitor where id=${targetId}`, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log(`model/Visitor.js >> `, rows);
+    // OkPacket {
+    //   fieldCount: 0,
+    //   affectedRows: 1,
+    //   insertId: 0,
+    //   serverStatus: 2,
+    //   warningCount: 0,
+    //   message: '',
+    //   protocol41: true,
+    //   changedRows: 0
+    // }
+    callback(true); // 삭제
+  })
+}

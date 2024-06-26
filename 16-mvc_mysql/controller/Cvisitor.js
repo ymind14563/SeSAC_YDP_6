@@ -28,6 +28,16 @@ exports.getVisitors = (req, res) => {
   })
 };
 
+// GET /visitor/:id
+exports.getVisitor = (req, res) => {
+  // req.params.id // 조회 해야할 id
+  Visitor.getVisitor(req.params.id, (result) => {
+    res.send(result);
+  }); 
+
+}
+
+
 // POST
 exports.postVisitor = (req, res) => {
   console.log(req.body);
@@ -44,4 +54,28 @@ exports.postVisitor = (req, res) => {
       comment : req.body.comment
     })
   });
+}
+
+// Patch
+exports.patchVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.patchVisitor(req.body, (result) => {
+    console.log(`controller/Cvisitor.js >> `, result);
+
+    res.send({ result }); // { result : result }
+
+  });
+}
+
+
+// Delete
+exports.deleteVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.deleteVisitor(req.body.id, (result) => {
+    console.log('controller/Cvisitor.js >> ', result);
+    
+    res.send({ result }); // { result : result }
+  })
 }
