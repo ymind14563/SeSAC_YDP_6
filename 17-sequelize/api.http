@@ -1,0 +1,32 @@
+@server = http://localhost:8000
+@player_id = 1
+
+### 전체 선수 조회
+GET {{server}}/players
+
+### id로 특정 선수 조회
+GET {{server}}/players/{{player_id}}
+
+### 선수 추가
+POST {{server}}/players
+Content-Type: application/json; charset=UTF-8
+
+{
+    "name": "손흥민",
+    "age": 31,
+    "team_id": 2
+}
+
+### 특정 선수의 소속 팀 변경
+PATCH {{server}}/players/{{player_id}}/team
+Content-Type: application/json; charset=UTF-8
+
+{
+    "team_id": 3 // 성공하면 1을 출력, 실패하면 0을 출력함.
+}
+
+### 특정 선수 방출 (삭제)
+DELETE {{server}}/players/{{player_id}}
+// 삭제되면 isDeleted = 1, 결과값이 true 가 출력된다.
+// 이미 삭제되어 없는 선수를 삭제하면 결과값이 false 가 출력된다.
+// cascade 설정을 해놓았기 때문에, 선수가 삭제되면 프로필도 함께 삭제된다.
