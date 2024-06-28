@@ -62,8 +62,7 @@ exports.postPlayer = async (req, res) => {
 
 // 선수 소속팀 변경
 exports.patchPlayer = async (req, res) => {
-    
-    try{
+    try {
         console.log(req.params.id);
         console.log(req.body);
 
@@ -75,10 +74,11 @@ exports.patchPlayer = async (req, res) => {
             { team_id },
 
             // 누구를 바꿔야하는데?
-            {where: { player_id }}
+            { where: { player_id } }
         );
 
         res.json(updatedPlayer);
+        
     } catch (error) {
         console.error(error);
         res.status(500).send(`Internal Server Error`);
@@ -93,7 +93,7 @@ exports.deletePlayer = async (req, res) => {
             where: { player_id }
         });
 
-        console.log(isDeleted); // 1
+        console.log(isDeleted); // 1 or 0
 
         if (isDeleted) {
             return res.send(true);
