@@ -118,6 +118,23 @@ io.on(`connection`, (socket) => {
 
     })
 
+    // [6] 메세지 전송
+    socket.on('sendMessage', (res) => {
+        console.log('sendMessage >>> ', res); // {message:'안녕', user:'아이디', select:all}
+        const { message, user, select } = res; // 구조 분해 할당
+        // res 객체에서 속성 추출하여 각각 변수에 할당.
+        if (select === 'all') {
+            // 특정 방에 전체 사용자에게 메세지 보내기
+            io.to(socket.roomName).emit('newMessage', { message, user, dm: false });
+        } else { 
+            // 특정 방에 DM 대상자에게 메세지 보내기
+            io.to(select).emit('newMessage', { message, user, dm: true});
+            // 자기 자신에게 메세지 보내기 (나한테서 보이기)
+            socket.emit('newMessage', { message, user, dm: true })
+        }
+    })
+
+
 })
 
 server.listen(PORT, () => {
