@@ -40,6 +40,7 @@ export default function EventStudy() {
     const handleClickWithParam = (e, message) => {
       setCount(count + 1);
       setPosition({ x: e.clientX, y: e.clientY });
+      setMessage(message)
       console.log("message >>> ", message);
     }
 
@@ -69,7 +70,10 @@ export default function EventStudy() {
 
         {/* 매개변수를 사용하여 handleClickWithParam 호출 */}
         {/* e(event 객체)를 직접 보내는 이유는 핸들러 함수에 추가적인 매개변수를 전달하기 위함*/}
-        <button onClick={(e) => handleClickWithParam(e, "버튼 클릭됨 !")}>클릭 (메세지 출력)</button>
+        <button onClick={(e) => handleClickWithParam(e, '버튼 클릭됨 !')}>클릭 (메세지 출력)</button>
+        <div>
+          메세지 : { message }
+        </div>
         <hr />
 
         {/* 클릭 시 messageClick 호출 */}
