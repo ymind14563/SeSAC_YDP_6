@@ -22,6 +22,9 @@ function App() {
 
       <LifeCycleClass />
       <hr />
+
+      <LifeCycleFunc />
+      <hr />
     </div>
   );
 }
