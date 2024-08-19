@@ -6,6 +6,7 @@ import { createStore } from 'redux'; // 취소선: 잘 쓰는 방식이니 지�
 import { Provider } from 'react-redux';
 import App2 from './App2';
 import App3 from './App3';
+import rootReducer from './store';
 import App4 from './App4';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // #6. Store 생성
 // [전통 Redux 방식]
 // 'createStore'를 사용하여 Redux 스토어를 생성
-const store = createStore(counterReducer);
+const store = createStore(rootReducer);
 
 
 root.render(
