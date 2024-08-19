@@ -14,7 +14,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // #6. Store 생성
 // [전통 Redux 방식]
 // 'createStore'를 사용하여 Redux 스토어를 생성
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,
+  // Redux DevTools Extension - 구글 크롬 확장 프로그램 검색
+  // Redux DevTools Extension 사용하는 경우 (redux-toolkit 방식 적용하지 않았는데 확장프로그램 이용해야하는 경우를 말함)
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 
 root.render(
